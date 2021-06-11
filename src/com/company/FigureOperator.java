@@ -6,7 +6,7 @@ public class FigureOperator {
     public static void createFigure() {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("podaj nazwę figury: prostokąt, trójkąt, koło");
+        System.out.println("podaj nazwę figury: kwadrat, trójkąt, koło");
         String figureName = scanner.nextLine();
 
         System.out.println("pole czy obwód?");
@@ -22,10 +22,10 @@ public class FigureOperator {
                     new Point(scanner.nextDouble(), scanner.nextDouble()));
             figureCalculations(figure, areaOrPerimeter);
 
-        } else if (figureName.equals("prostokąt")) {
+        } else if (figureName.equals("kwadrat")) {
             System.out.println("Podaj współrzędne rogów we właściwej kolejności x1 y1 x2 y2 x3 y3 x4 y4: ");
 
-            figure = new Rectangle(new Point(scanner.nextDouble(), scanner.nextDouble()),
+            figure = new Square(new Point(scanner.nextDouble(), scanner.nextDouble()),
                     new Point(scanner.nextDouble(), scanner.nextDouble()),
                     new Point(scanner.nextDouble(), scanner.nextDouble()),
                     new Point(scanner.nextDouble(), scanner.nextDouble()));
