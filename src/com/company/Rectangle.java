@@ -49,11 +49,14 @@ public class Rectangle extends Figure {
     public boolean isCorrect() {
 //sprawdzenie czy sąsiadujące boki są prostopadłe czyli czy figura jest prostokątem
         for (int i = 0; i < 4; i++) {
-            if ((points[i].getY() - points[(i + 1) % 4].getY()) / (points[i].getX() - points[(i + 1) % 4].getX()) *
-                            (points[(i + 1) % 4].getY() - points[(i + 2) % 4].getY()) / (points[(i + 1) % 4].getX() - points[(i + 2) % 4].getX()) != -1
-            ) {
-                System.out.println("to nie jest prostokąt");
-                return false;
+            if ((points[0].getX() - points[1].getX() == 0 || (points[2].getX() - points[3].getX() == 0)) &&
+                    (points[1].getX() - points[2].getX() == 0 || (points[3].getX() - points[0].getX() == 0))) {
+
+                if ((points[i].getY() - points[(i + 1) % 4].getY()) / (points[i].getX() - points[(i + 1) % 4].getX()) *
+                        (points[(i + 1) % 4].getY() - points[(i + 2) % 4].getY()) / (points[(i + 1) % 4].getX() - points[(i + 2) % 4].getX()) != -1) {
+                    System.out.println("to nie jest prostokąt");
+                    return false;
+                }
             }
         }
         return super.isCorrect();

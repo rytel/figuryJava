@@ -8,6 +8,7 @@ public class FigureOperator {
 
         System.out.println("podaj nazwę figury: prostokąt, trójkąt, koło");
         String figureName = scanner.nextLine();
+
         System.out.println("pole czy obwód?");
         String areaOrPerimeter = scanner.nextLine();
 
@@ -38,7 +39,7 @@ public class FigureOperator {
             figureCalculations(figure, areaOrPerimeter);
 
         } else {
-            System.out.println("Podano złą nazwę");
+            System.out.println("Podano złą nazwę figury");
         }
     }
 
@@ -51,7 +52,7 @@ public class FigureOperator {
         } else if (areaOrPerimeter.equals("obwód")) {
             figure.showParimeter();
         } else {
-            System.out.println("Błędne dane");
+            System.out.println("błędnie wpisano pole/obwód");
         }
     }
 }
