@@ -16,27 +16,36 @@ public class FigureOperator {
 
         if (figureName.equals("trójkąt")) {
             System.out.println("Podaj współrzędne rogów x1 y1 x2 y2 x3 y3: ");
-
-            figure = new Triangle(new Point(scanner.nextDouble(), scanner.nextDouble()),
-                    new Point(scanner.nextDouble(), scanner.nextDouble()),
-                    new Point(scanner.nextDouble(), scanner.nextDouble()));
-            figureCalculations(figure, areaOrPerimeter);
+            try {
+                figure = new Triangle(new Point(scanner.nextDouble(), scanner.nextDouble()),
+                        new Point(scanner.nextDouble(), scanner.nextDouble()),
+                        new Point(scanner.nextDouble(), scanner.nextDouble()));
+                figureCalculations(figure, areaOrPerimeter);
+            } catch (Exception exception) {
+                System.out.println("błędne dane");
+            }
 
         } else if (figureName.equals("kwadrat")) {
             System.out.println("Podaj współrzędne rogów we właściwej kolejności x1 y1 x2 y2 x3 y3 x4 y4: ");
-
-            figure = new Square(new Point(scanner.nextDouble(), scanner.nextDouble()),
-                    new Point(scanner.nextDouble(), scanner.nextDouble()),
-                    new Point(scanner.nextDouble(), scanner.nextDouble()),
-                    new Point(scanner.nextDouble(), scanner.nextDouble()));
-            figureCalculations(figure, areaOrPerimeter);
+            try {
+                figure = new Square(new Point(scanner.nextDouble(), scanner.nextDouble()),
+                        new Point(scanner.nextDouble(), scanner.nextDouble()),
+                        new Point(scanner.nextDouble(), scanner.nextDouble()),
+                        new Point(scanner.nextDouble(), scanner.nextDouble()));
+                figureCalculations(figure, areaOrPerimeter);
+            } catch (Exception exception) {
+                System.out.println("błędne dane");
+            }
 
         } else if (figureName.equals("koło")) {
             System.out.println("Podaj współrzędne środka koła oraz współrzędne punktu znajdującego sie na krawędzi koła x1 y1 x2 y2: ");
-
-            figure = new Circle(new Point(scanner.nextDouble(), scanner.nextDouble()),
-                    new Point(scanner.nextDouble(), scanner.nextDouble()));
-            figureCalculations(figure, areaOrPerimeter);
+            try {
+                figure = new Circle(new Point(scanner.nextDouble(), scanner.nextDouble()),
+                        new Point(scanner.nextDouble(), scanner.nextDouble()));
+                figureCalculations(figure, areaOrPerimeter);
+            } catch (Exception exception) {
+                System.out.println("błędne dane");
+            }
 
         } else {
             System.out.println("Podano złą nazwę figury");
