@@ -1,40 +1,30 @@
 package com.company;
 
 public class Circle extends Figure {
-    private Point[] points = new Point[2];
-    private Segment[] segments = new Segment[1];
+
+    private final CircleOperator operator;
 
     public Circle(Point point1, Point point2) {
+        super("koło");
+        Point[] points = new Point[2];
+        Segment[] segments = new Segment[1];
         points[0] = point1;
         points[1] = point2;
-        setSegments();
-        super.setName("koło");
-        super.setPoints(this.points);
-        super.setSegments(this.segments);
-    }
+        segments[0] = new Segment(point1, point2);
+        this.operator = new CircleOperator();
 
-    public void setArea() {
-        setPerimeter();
-        super.setArea(Math.PI * this.segments[0].getLength() * this.segments[0].getLength());
-    }
-
-    public void setPerimeter() {
-        super.setPerimeter(2 * Math.PI * this.segments[0].getLength());
-    }
-
-    public void setSegments() {
-        this.segments[0] = new Segment(this.points[0], this.points[1]);
+        super.setPoints(points);
+        super.setSegments(segments);
     }
 
     @Override
-    public void showParimeter() {
-        setPerimeter();
-        super.showParimeter();
+    public double getPerimeter() {
+        return this.operator.calcPerimeter(this);
     }
 
     @Override
-    public void showArea() {
-        setArea();
-        super.showArea();
+    public double getArea() {
+        return this.operator.calcArea(this);
     }
 }
+

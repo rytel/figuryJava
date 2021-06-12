@@ -1,22 +1,25 @@
 package com.company;
 
 public abstract class Figure {
-    private String name;
+    private final String name;
     private Point[] points;
     private Segment[] segments;
-    private double area, perimeter;
 
-    public void showParimeter() {
-        if (isCorrect()) {
-            System.out.println("Obwód figury " + this.name + " wynosi: " + this.perimeter);
-        }
+    protected Figure(String name) {
+        this.name = name;
     }
 
-    public void showArea() {
-        if (isCorrect()) {
-            System.out.println("Pole figury " + this.name + " wynosi: " + this.area);
-        }
+    protected void setPoints(Point[] points) {
+        this.points = points;
     }
+
+    protected void setSegments(Segment[] segments) {
+        this.segments = segments;
+    }
+
+    public abstract double getPerimeter();
+
+    public abstract double getArea();
 
     public boolean isCorrect() {
         for (Segment i : this.segments) {
@@ -28,27 +31,13 @@ public abstract class Figure {
         return true;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public Segment[] getSegments() {
+        return segments;
     }
 
-    public void setArea(double area) {
-        this.area = area;
+    public Point[] getPoints() {
+        return points;
     }
 
-    public void setPerimeter(double perimeter) {
-        this.perimeter = perimeter;
-    }
 
-    public void setPoints(Point[] points) {
-        this.points = points;
-    }
-
-    public void setSegments(Segment[] segments) {
-        this.segments = segments;
-    }
-
-    public double getPerimeter() {
-        return perimeter;
-    }
 }
