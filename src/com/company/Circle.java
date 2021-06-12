@@ -19,12 +19,18 @@ public class Circle extends Figure {
 
     @Override
     public double getPerimeter() {
-        return this.operator.calcPerimeter(this);
+        if(isCorrect()) {
+            return this.operator.calcPerimeter(this);
+        }
+        return 0;
     }
 
     @Override
     public double getArea() {
-        return this.operator.calcArea(this);
+        if(isCorrect()) {
+            return this.operator.calcArea(this);
+        }
+        return 0;
     }
 }
 

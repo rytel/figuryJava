@@ -10,9 +10,4 @@ public class CircleOperator implements Operator<Circle>{
     public double calcArea(Circle figure) {
         return Math.PI * figure.getSegments()[0].getLength() * figure.getSegments()[0].getLength();
     }
-
-    @Override
-    public boolean isCorrect(Figure figure) {
-        return true;
-    }
 }

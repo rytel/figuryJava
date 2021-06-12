@@ -17,6 +17,10 @@ public abstract class Figure {
         this.segments = segments;
     }
 
+    public String getName() {
+        return name;
+    }
+
     public abstract double getPerimeter();
 
     public abstract double getArea();
@@ -38,6 +42,8 @@ public abstract class Figure {
     public Point[] getPoints() {
         return points;
     }
+
+
 
 
 }

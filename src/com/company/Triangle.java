@@ -21,12 +21,29 @@ private  final TriangleOperator operator;
 
     @Override
     public double getPerimeter() {
-        return this.operator.calcPerimeter(this);
+        if(isCorrect()) {
+            return this.operator.calcPerimeter(this);
+        }
+        return 0;
     }
 
     @Override
     public double getArea() {
-        return this.operator.calcArea(this);
+        if(isCorrect()) {
+            return this.operator.calcArea(this);
+        }
+        return 0;
+    }
+
+    @Override
+    public boolean isCorrect() {
+        for (int i = 0; i < 3; i++) {
+            if (getSegments()[i % 3].getLength() + getSegments()[(1 + i) % 3].getLength() == getSegments()[(2 + i) % 3].getLength()) {
+                System.out.println("Punkty są współliniowe, to nie trójkąt");
+                return false;
+            }
+        }
+        return  super.isCorrect();
     }
 
 
