@@ -1,6 +1,6 @@
 package com.company;
 
-public class CircleOperator implements Operator<Circle>{
+public class CircleOperator implements Operator<Circle> {
     @Override
     public double calcPerimeter(Circle figure) {
         return 2 * Math.PI * figure.getSegments()[0].getLength();
@@ -9,5 +9,10 @@ public class CircleOperator implements Operator<Circle>{
     @Override
     public double calcArea(Circle figure) {
         return Math.PI * figure.getSegments()[0].getLength() * figure.getSegments()[0].getLength();
+    }
+
+    @Override
+    public Class<Circle> getFigureType() {
+        return Circle.class;
     }
 }

@@ -16,21 +16,5 @@ public class Circle extends Figure {
         super.setPoints(points);
         super.setSegments(segments);
     }
-
-    @Override
-    public double getPerimeter() {
-        if(isCorrect()) {
-            return this.operator.calcPerimeter(this);
-        }
-        return 0;
-    }
-
-    @Override
-    public double getArea() {
-        if(isCorrect()) {
-            return this.operator.calcArea(this);
-        }
-        return 0;
-    }
 }
 

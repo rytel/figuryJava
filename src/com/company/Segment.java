@@ -1,8 +1,8 @@
 package com.company;
 
 public class Segment {
+    private final Point[] points = new Point[2];
     private double length;
-    private Point[] points = new Point[2];
 
     public Segment(Point a, Point b) {
         this.points[0] = a;

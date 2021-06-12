@@ -14,5 +14,8 @@ public class SquareOperator implements Operator<Square> {
         return figure.getSegments()[0].getLength() * figure.getSegments()[1].getLength();
     }
 
-
+    @Override
+    public Class<Square> getFigureType() {
+        return Square.class;
+    }
 }

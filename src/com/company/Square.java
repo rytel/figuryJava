@@ -23,22 +23,6 @@ public class Square extends Figure {
         super.setSegments(segments);
     }
 
-
-    @Override
-    public double getPerimeter() {
-        if(isCorrect()) {
-            return this.operator.calcPerimeter(this);
-        }
-        return 0;
-    }
-
-    @Override
-    public double getArea() {
-        if(isCorrect()) {
-            return this.operator.calcArea(this);
-        }
-        return 0;
-    }
     @Override
     public boolean isCorrect() {
         Segment[] diagonal = new Segment[2];
@@ -56,7 +40,5 @@ public class Square extends Figure {
         }
         return super.isCorrect();
     }
-
-//    }
 }
 

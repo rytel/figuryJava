@@ -9,21 +9,9 @@ public abstract class Figure {
         this.name = name;
     }
 
-    protected void setPoints(Point[] points) {
-        this.points = points;
-    }
-
-    protected void setSegments(Segment[] segments) {
-        this.segments = segments;
-    }
-
     public String getName() {
         return name;
     }
-
-    public abstract double getPerimeter();
-
-    public abstract double getArea();
 
     public boolean isCorrect() {
         for (Segment i : this.segments) {
@@ -39,8 +27,16 @@ public abstract class Figure {
         return segments;
     }
 
+    protected void setSegments(Segment[] segments) {
+        this.segments = segments;
+    }
+
     public Point[] getPoints() {
         return points;
+    }
+
+    protected void setPoints(Point[] points) {
+        this.points = points;
     }
 
 
